@@ -168,9 +168,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ThemesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,6 +181,10 @@
     <Compile Include="Migrations\202106140840442_mig2.cs" />
     <Compile Include="Migrations\202106140840442_mig2.Designer.cs">
       <DependentUpon>202106140840442_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106140926213_mig3.cs" />
+    <Compile Include="Migrations\202106140926213_mig3.Designer.cs">
+      <DependentUpon>202106140926213_mig3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -257,11 +261,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Themes\Create.cshtml" />
-    <Content Include="Views\Themes\Delete.cshtml" />
-    <Content Include="Views\Themes\Details.cshtml" />
-    <Content Include="Views\Themes\Edit.cshtml" />
-    <Content Include="Views\Themes\Index.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106140840442_mig2.resx">
       <DependentUpon>202106140840442_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106140926213_mig3.resx">
+      <DependentUpon>202106140926213_mig3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

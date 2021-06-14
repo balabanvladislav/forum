@@ -25,6 +25,7 @@ namespace MDForum.Models
         {
         }
         public DbSet<Theme> Themes { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -15,7 +15,7 @@ namespace MDForum.Models
 
         public string DTime { set; get; }
 
-        public int Category{ get; set; }
+        public int ThemeId{ get; set; }
 
         public virtual ApplicationUser User { set; get; }
     }

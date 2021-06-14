@@ -179,6 +179,7 @@ body {
 #content {
     float: left;
     padding: 0 20px;
+    width: 100%;
 }
 
 #sidebar-wrapper {
@@ -310,4 +311,11 @@ body#babout li#labout a {
 #footer a:hover, #footer a:active {
     color: #999999;
     border-bottom: 1px solid #999999;
+}
+
+.table{
+    color: #ffffff;
+    width: 80%;
+    background: #404040 url(../images/navigation_hover.gif) top left repeat;
+    margin: 20px auto;
 }

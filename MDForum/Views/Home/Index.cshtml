@@ -10,11 +10,11 @@
             {
                 <blockquote>
                 <a href="#">
-                   
-                        <dt>@theme.Title</dt>
-                        <dd>
+
+                <dt>@Html.ActionLink(@theme.Title, "Index", "Comments", new { theme.Id }, htmlAttributes: new { })</dt>
+                    <dd>
                             <em>
-                                @theme.DepText;
+                                @theme.DepText
                             </em>
 
                         </dd>
@@ -30,67 +30,66 @@
             
             
             <h2>Film</h2>
-            @for (int i = 0; i < 2; i++)
+            @foreach (var theme in Model.Where(x => x.Category == 2))
             {
-                <a href="#">
-                    <blockquote>
-                        <dt>Sixpence</dt>
+                <blockquote>
+                    <a href="#">
+                   
+                        <dt>@Html.ActionLink(@theme.Title, "Index", "Comments", new { theme.Id }, htmlAttributes: new { })</dt>
                         <dd>
-                            An awesome new template.
                             <em>
-                                Created by .
-                                Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't
-                                required but much appreciated. I'll stop abusing the definition list now. ;-)
+                                @theme.DepText
                             </em>
 
                         </dd>
-                    </blockquote>
-                </a>
-
+                    
+                    </a>
+                    @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                </blockquote>
             }<a href="#">
                  <blockquote>
                      @Html.ActionLink("Add", "Create", "Home", new { category = 2 }, htmlAttributes: new { })
                  </blockquote>
             </a>
             <h2>Politica</h2>
-            @for (int i = 0; i < 1; i++)
+            @foreach (var theme in Model.Where(x => x.Category == 3))
             {
-                <a href="#">
-                    <blockquote>
-                        <dt>Sixpence</dt>
+                <blockquote>
+                    <a href="#">
+                   
+                        <dt>@Html.ActionLink(@theme.Title, "Index", "Comments", new { theme.Id }, htmlAttributes: new { })</dt>
                         <dd>
-                            An awesome new template.
                             <em>
-                                Created by .
-                                Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't
-                                required but much appreciated. I'll stop abusing the definition list now. ;-)
+                                @theme.DepText
                             </em>
 
                         </dd>
-                    </blockquote>
-                </a>
+                    
+                    </a>
+                    @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                </blockquote>
             }<a href="#">
                  <blockquote>
                      @Html.ActionLink("Add", "Create", "Home", new { category = 3 }, htmlAttributes: new { })
                  </blockquote>
             </a>
             <h2>Activitati</h2>
-            @for (int i = 0; i < 5; i++)
+            @foreach (var theme in Model.Where(x => x.Category == 4))
             {
-                <a href="#">
-                    <blockquote>
-                        <dt>Sixpence</dt>
+                <blockquote>
+                    <a href="#">
+                   
+                        <dt>@Html.ActionLink(@theme.Title, "Index", "Comments", new { theme.Id }, htmlAttributes: new { })</dt>
                         <dd>
-                            An awesome new template.
                             <em>
-                                Created by .
-                                Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't
-                                required but much appreciated. I'll stop abusing the definition list now. ;-)
+                                @theme.DepText
                             </em>
 
                         </dd>
-                    </blockquote>
-                </a>
+                    
+                    </a>
+                    @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                </blockquote>
             }
             <a href="#">
                 <blockquote>

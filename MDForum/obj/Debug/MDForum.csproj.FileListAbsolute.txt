@@ -109,3 +109,4 @@ C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.pdb
 C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.Migrations.test.resources
 C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.csproj.GenerateResource.cache
 C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.Migrations.mig2.resources
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.Migrations.mig3.resources
