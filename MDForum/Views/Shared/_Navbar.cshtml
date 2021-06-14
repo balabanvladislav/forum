@@ -5,19 +5,22 @@
     <ul>
 
         <li id="lhome">
-            @Html.ActionLink("Home", "Index", "Home")
+            @Html.ActionLink("Acasa", "Index", "Home")
         </li>
         <li id="mysterious">
-            <a href="#03">Mysterious</a>
+            <a href="#03">Ceva neclar</a>
         </li>
         <li id="labout">
-            <a href="#04">About Us</a>
+            <a href="#04">Despre Noi</a>
         </li>
         <li id="lcontact">
-            <a href="#05">Contact Us</a>
+            <a href="#05">Contacteaza -ne</a>
         </li>
-        <li style=" position: absolute; right:0px">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        @if (!Request.IsAuthenticated)
+        {
+            <li style=" position: absolute; right:0px">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink"})</li>
 
-        <li style="position: absolute; right: 90px">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            <li style="position: absolute; right: 90px">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink"})</li>
+        }
     </ul>
 </div>
