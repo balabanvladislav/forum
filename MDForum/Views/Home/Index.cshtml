@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<MDForum.Models.Theme>
+@using Microsoft.AspNet.Identity
 
 
-<div id="wrapper">
+<div id="wrapper" xmlns="http://www.w3.org/1999/html">
     <div id="content-wrapper">
 
         <div id="content">
@@ -25,7 +26,7 @@
             }
             
             <blockquote>
-                @Html.ActionLink("Add", "Create", "Home", new { category = 1 }, htmlAttributes: new { })
+                @Html.ActionLink("Adauga", "Create", "Home", new { category = 1 }, htmlAttributes: new { })
             </blockquote>
             
             
@@ -48,7 +49,7 @@
                 </blockquote>
             }<a href="#">
                  <blockquote>
-                     @Html.ActionLink("Add", "Create", "Home", new { category = 2 }, htmlAttributes: new { })
+                     @Html.ActionLink("Adauga", "Create", "Home", new { category = 2 }, htmlAttributes: new { })
                  </blockquote>
             </a>
             <h2>Politica</h2>
@@ -70,7 +71,7 @@
                 </blockquote>
             }<a href="#">
                  <blockquote>
-                     @Html.ActionLink("Add", "Create", "Home", new { category = 3 }, htmlAttributes: new { })
+                     @Html.ActionLink("Adauga", "Create", "Home", new { category = 3 }, htmlAttributes: new { })
                  </blockquote>
             </a>
             <h2>Activitati</h2>
@@ -88,38 +89,46 @@
                         </dd>
                     
                     </a>
-                    @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    @Html.ActionLink("Sterge", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
                 </blockquote>
             }
             <a href="#">
                 <blockquote>
-                    @Html.ActionLink("Add", "Create", "Home", new { category = 4 }, htmlAttributes: new { })
+                    @Html.ActionLink("Adauga", "Create", "Home", new { category = 4 }, htmlAttributes: new { })
                 </blockquote>
             </a>
         </div>
     </div>
     <div id="sidebar-wrapper">
         <div id="sidebar">
-            <h3>An Unordered List</h3>
+            <h3>De ce forumul nostru merita atentia ta?</h3>
             <ul>
-                <li>I am the most interesting person in the whole galaxy.</li>
-                <li>Monkeys are cute &mdash; in cartoons.</li>
-                <li>Tom &amp; Jerry rocks. Especially the kids' version.</li>
-                <li>July 16, 2009.</li>
-                <li>Great American Masterpiece.</li>
-                <li>Modern Art: Art or Garbage? Discuss.</li>
+                <li>In acest forum fiecare persoana poate incepe discutia pe o tema anumita din categoriile sport, film, politica, activitati.</li>
+                <br/><li>Ai optiunea de a face cont si de a scrie din numele lui, sau, daca doresti, poti lasa un comentariu si fara ca sa intri in cont, pentru a fi maximal de anonim.</li>
+                <br/><li>Administratia nu este aspra, si accepta orice parere.</li>
+                <br/><li>Aici poti intalni persoane care gandesc si au o parere fix ca a ta.</li>
+                <br/>
             </ul>
-            <h3>An Ordered List</h3>
+            <h3>Pentru a incepe discutia pe o tema care te intereseaza urmareste pasii dati:</h3>
             <ol>
-                <li>How to become <strong>one</strong> is studied by many.</li>
-                <li>Yin/yang. Left/right. Up/down. Black/white. <strong>Two</strong> thousand six hundred and forty-<strong>two</strong>.</li>
-                <li><strong>Three</strong> Little Pigs. <strong>Three</strong> Blind Mice. <strong>Three</strong> Wolves and a Swan Prince.</li>
-                <li>A Quarter + A Dime + A Nickel = <strong>4</strong> Dimes.</li>
-                <li>Now I know my 1, 2, 3; I can go to 4, <strong>5</strong>, 6.</li>
-                <li><strong>Six</strong>ty-<strong>six</strong> on <strong>6</strong>/<strong>6</strong>/<strong>6</strong>00<strong>6</strong></li>
+                <li>Inregistreaza-te daca ai cont deja facut, daca nu, il poti creea foarte usor in 2 minute apasand pe butonul <strong>Inregistrare</strong>.</li><br/>
+                <li>Alege categoria din care face parte tema ta.</li><br/>
+                <li>Apasa pe <strong>Adauga</strong> si apoi introdu numele temei si descrierea ei.</li><br/>
+                <li>Atat! Acum oricine se poate imparti cu parerea sa in comentarii!</li><br/>
             </ol>
-            <h3>Stats</h3>
-            <p> This page was brought to you by the numbers 8 and 10, which were getting lonely. </p>
+            
+            
+            <h3>Starea ta</h3>
+            <blockquote>
+            @if (!Request.IsAuthenticated)
+            {
+                @Html.Label("", "Anonim")
+            }
+            else
+            {
+                @Html.Label("",User.Identity.Name)
+            }
+            </blockquote>
         </div>
 
     </div>

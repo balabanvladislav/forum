@@ -1,4 +1,5 @@
-﻿<div id="header">
+﻿@using Microsoft.AspNet.Identity
+<div id="header">
     <h1>MDForum | Portal</h1>
 </div>
 <div id="navigation">
@@ -18,9 +19,17 @@
         </li>
         @if (!Request.IsAuthenticated)
         {
-            <li style=" position: absolute; right:0px">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink"})</li>
+            <li style=" position: absolute; right:10px">@Html.ActionLink("Inregistrare", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink"})</li>
 
-            <li style="position: absolute; right: 90px">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink"})</li>
+            <li style="position: absolute; right: 134px">@Html.ActionLink("Logare", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink"})</li>
+        }
+        else
+        {    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+
+                <li style=" position: absolute; right:10px"><a href="javascript:document.getElementById('logoutForm').submit()">Iesi</a></li>
+        }
         }
     </ul>
 </div>
