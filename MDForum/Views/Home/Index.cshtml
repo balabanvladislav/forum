@@ -1,0 +1,127 @@
+﻿@model IEnumerable<MDForum.Models.Theme>
+
+
+<div id="wrapper">
+    <div id="content-wrapper">
+
+        <div id="content">
+            <h2>Sport</h2>
+            @foreach (var theme in Model.Where(x => x.Category == 1))
+            {
+                <blockquote>
+                <a href="#">
+                   
+                        <dt>@theme.Title</dt>
+                        <dd>
+                            <em>
+                                @theme.DepText;
+                            </em>
+
+                        </dd>
+                    
+                </a>
+                @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+            </blockquote>
+            }
+            
+            <blockquote>
+                @Html.ActionLink("Add", "Create", "Home", new { category = 1 }, htmlAttributes: new { })
+            </blockquote>
+            
+            
+            <h2>Film</h2>
+            @for (int i = 0; i < 2; i++)
+            {
+                <a href="#">
+                    <blockquote>
+                        <dt>Sixpence</dt>
+                        <dd>
+                            An awesome new template.
+                            <em>
+                                Created by .
+                                Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't
+                                required but much appreciated. I'll stop abusing the definition list now. ;-)
+                            </em>
+
+                        </dd>
+                    </blockquote>
+                </a>
+
+            }<a href="#">
+                 <blockquote>
+                     @Html.ActionLink("Add", "Create", "Home", new { category = 2 }, htmlAttributes: new { })
+                 </blockquote>
+            </a>
+            <h2>Politica</h2>
+            @for (int i = 0; i < 1; i++)
+            {
+                <a href="#">
+                    <blockquote>
+                        <dt>Sixpence</dt>
+                        <dd>
+                            An awesome new template.
+                            <em>
+                                Created by .
+                                Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't
+                                required but much appreciated. I'll stop abusing the definition list now. ;-)
+                            </em>
+
+                        </dd>
+                    </blockquote>
+                </a>
+            }<a href="#">
+                 <blockquote>
+                     @Html.ActionLink("Add", "Create", "Home", new { category = 3 }, htmlAttributes: new { })
+                 </blockquote>
+            </a>
+            <h2>Activitati</h2>
+            @for (int i = 0; i < 5; i++)
+            {
+                <a href="#">
+                    <blockquote>
+                        <dt>Sixpence</dt>
+                        <dd>
+                            An awesome new template.
+                            <em>
+                                Created by .
+                                Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't
+                                required but much appreciated. I'll stop abusing the definition list now. ;-)
+                            </em>
+
+                        </dd>
+                    </blockquote>
+                </a>
+            }
+            <a href="#">
+                <blockquote>
+                    @Html.ActionLink("Add", "Create", "Home", new { category = 4 }, htmlAttributes: new { })
+                </blockquote>
+            </a>
+        </div>
+    </div>
+    <div id="sidebar-wrapper">
+        <div id="sidebar">
+            <h3>An Unordered List</h3>
+            <ul>
+                <li>I am the most interesting person in the whole galaxy.</li>
+                <li>Monkeys are cute &mdash; in cartoons.</li>
+                <li>Tom &amp; Jerry rocks. Especially the kids' version.</li>
+                <li>July 16, 2009.</li>
+                <li>Great American Masterpiece.</li>
+                <li>Modern Art: Art or Garbage? Discuss.</li>
+            </ul>
+            <h3>An Ordered List</h3>
+            <ol>
+                <li>How to become <strong>one</strong> is studied by many.</li>
+                <li>Yin/yang. Left/right. Up/down. Black/white. <strong>Two</strong> thousand six hundred and forty-<strong>two</strong>.</li>
+                <li><strong>Three</strong> Little Pigs. <strong>Three</strong> Blind Mice. <strong>Three</strong> Wolves and a Swan Prince.</li>
+                <li>A Quarter + A Dime + A Nickel = <strong>4</strong> Dimes.</li>
+                <li>Now I know my 1, 2, 3; I can go to 4, <strong>5</strong>, 6.</li>
+                <li><strong>Six</strong>ty-<strong>six</strong> on <strong>6</strong>/<strong>6</strong>/<strong>6</strong>00<strong>6</strong></li>
+            </ol>
+            <h3>Stats</h3>
+            <p> This page was brought to you by the numbers 8 and 10, which were getting lonely. </p>
+        </div>
+
+    </div>
+</div>

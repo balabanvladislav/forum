@@ -1,0 +1,23 @@
+﻿<div id="header">
+    <h1>MDForum | Portal</h1>
+</div>
+<div id="navigation">
+    <ul>
+
+        <li id="lhome">
+            @Html.ActionLink("Home", "Index", "Home")
+        </li>
+        <li id="mysterious">
+            <a href="#03">Mysterious</a>
+        </li>
+        <li id="labout">
+            <a href="#04">About Us</a>
+        </li>
+        <li id="lcontact">
+            <a href="#05">Contact Us</a>
+        </li>
+        <li style=" position: absolute; right:0px">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+
+        <li style="position: absolute; right: 90px">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+</div>
