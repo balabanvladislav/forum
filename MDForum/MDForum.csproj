@@ -294,6 +294,16 @@
       <DependentUpon>202106140926213_mig3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MDF.BLogic\MDF.BLogic.csproj">
+      <Project>{6b8cfd56-8a6b-49b1-ae4e-28647ded7d28}</Project>
+      <Name>MDF.BLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDF.Domain\MDF.Domain.csproj">
+      <Project>{b09492cf-e5d8-4bb2-9908-7cb4044d6962}</Project>
+      <Name>MDF.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
