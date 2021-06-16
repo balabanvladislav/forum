@@ -110,3 +110,11 @@ C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.Migrations.test.r
 C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.csproj.GenerateResource.cache
 C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.Migrations.mig2.resources
 C:\Users\37360\Desktop\Forum\MDForum\MDForum\obj\Debug\MDForum.Migrations.mig3.resources
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.BLogic.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.Domain.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.BLogic.pdb
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.BLogic.dll.config
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.Domain.pdb
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.Domain.dll.config
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.Helpers.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDForum\bin\MDF.Helpers.pdb

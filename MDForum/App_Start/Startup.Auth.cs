@@ -3,10 +3,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
-using MDForum.Models;
-
+using MDF.Domain;
+using MDF.BLogic;
 namespace MDForum
 {
     public partial class Startup

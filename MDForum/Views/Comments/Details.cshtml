@@ -1,0 +1,37 @@
+﻿@model MDF.Domain.Comment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detaii</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelFor(model => model.Author,"Autorul")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.DTime,"Data si ora")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTime)
+        </dd>
+        <dt>
+            @Html.LabelFor(model => model.CommentText,"Continutul")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentText)
+        </dd>
+
+
+
+    </dl>
+</div>

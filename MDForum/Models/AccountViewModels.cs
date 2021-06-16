@@ -64,6 +64,8 @@ namespace MDForum.Models
 
     public class RegisterViewModel
     {
+        public string Name { set; get; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

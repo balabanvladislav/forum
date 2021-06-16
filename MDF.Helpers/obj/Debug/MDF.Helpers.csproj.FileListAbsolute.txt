@@ -1,0 +1,6 @@
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Helpers\bin\Debug\MDF.Helpers.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Helpers\bin\Debug\MDF.Helpers.pdb
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Helpers\obj\Debug\MDF.Helpers.csprojAssemblyReference.cache
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Helpers\obj\Debug\MDF.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Helpers\obj\Debug\MDF.Helpers.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Helpers\obj\Debug\MDF.Helpers.pdb

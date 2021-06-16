@@ -1,4 +1,4 @@
-﻿@model MDForum.Models.Theme
+﻿@model MDF.Domain.Theme
 
 @{
     ViewBag.Title = "Create";
@@ -26,7 +26,7 @@
         <div class="form-group">
             <h3>@Html.LabelFor(model => model.Title,"Titlul", htmlAttributes: new { @class = "control-label col-md-2"})</h3>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -35,7 +35,7 @@
             <h3>@Html.LabelFor(model => model.DepText,"Descrierea", htmlAttributes: new { @class = "control-label col-md-2" })</h3>
             <div class="col-md-10">
                 @*<textarea asp-for="model.DepText" class="form-control" text-wrap:normal" type="text" placeholder="Please add your experience here"></textarea>*@
-                @Html.EditorFor(model => model.DepText, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(e => e.DepText, 10, 116, null)
                 @Html.ValidationMessageFor(model => model.DepText, "", new { @class = "text-danger" })
             </div>
         </div>

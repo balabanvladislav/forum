@@ -1,5 +1,4 @@
-﻿@model IEnumerable<MDForum.Models.Theme>
-@using Microsoft.AspNet.Identity
+﻿@model IEnumerable<MDF.Domain.Theme>
 
 
 <div id="wrapper" xmlns="http://www.w3.org/1999/html">
@@ -10,18 +9,21 @@
             @foreach (var theme in Model.Where(x => x.Category == 1))
             {
                 <blockquote>
-                <a href="#">
+                    <a href="#">
 
-                <dt>@Html.ActionLink(@theme.Title, "Index", "Comments", new { theme.Id }, htmlAttributes: new { })</dt>
-                    <dd>
+                        <dt>@Html.ActionLink(@theme.Title, "Index", "Comments", new { theme.Id }, htmlAttributes: new { })</dt>
+                        <dd>
                             <em>
                                 @theme.DepText
                             </em>
 
                         </dd>
                     
-                </a>
-                @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    </a>
+                    @if (User.IsInRole("admin"))
+                    {
+                        @Html.ActionLink("Sterge", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    }
             </blockquote>
             }
             
@@ -45,7 +47,10 @@
                         </dd>
                     
                     </a>
-                    @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    @if (User.IsInRole("admin"))
+                    {
+                        @Html.ActionLink("Sterge", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    }
                 </blockquote>
             }<a href="#">
                  <blockquote>
@@ -67,7 +72,10 @@
                         </dd>
                     
                     </a>
-                    @Html.ActionLink("Delete", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    @if (User.IsInRole("admin"))
+                    {
+                        @Html.ActionLink("Sterge", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    }
                 </blockquote>
             }<a href="#">
                  <blockquote>
@@ -89,7 +97,10 @@
                         </dd>
                     
                     </a>
-                    @Html.ActionLink("Sterge", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    @if (User.IsInRole("admin"))
+                    {
+                        @Html.ActionLink("Sterge", "Delete", "Home", new { theme.Id }, htmlAttributes: new { })
+                    }
                 </blockquote>
             }
             <a href="#">
@@ -101,6 +112,23 @@
     </div>
     <div id="sidebar-wrapper">
         <div id="sidebar">
+                        
+            <h3>Starea ta</h3>
+            <blockquote>
+                @if (!Request.IsAuthenticated)
+                {
+                    @Html.Label("", "Anonim")
+                }
+                else if(User.IsInRole("admin"))
+                {
+                    @Html.Label("","Admin", new{style="color:red;"})
+                }
+                else
+                {
+                    @Html.Label("",User.Identity.Name,  new{style="color:green;"})
+                }
+            </blockquote>
+            
             <h3>De ce forumul nostru merita atentia ta?</h3>
             <ul>
                 <li>In acest forum fiecare persoana poate incepe discutia pe o tema anumita din categoriile sport, film, politica, activitati.</li>
@@ -116,19 +144,8 @@
                 <li>Apasa pe <strong>Adauga</strong> si apoi introdu numele temei si descrierea ei.</li><br/>
                 <li>Atat! Acum oricine se poate imparti cu parerea sa in comentarii!</li><br/>
             </ol>
-            
-            
-            <h3>Starea ta</h3>
-            <blockquote>
-            @if (!Request.IsAuthenticated)
-            {
-                @Html.Label("", "Anonim")
-            }
-            else
-            {
-                @Html.Label("",User.Identity.Name)
-            }
-            </blockquote>
+
+
         </div>
 
     </div>

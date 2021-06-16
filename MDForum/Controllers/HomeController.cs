@@ -1,17 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using MDForum.Models;
+using MDF.Domain;
+using MDF.BLogic;
 
 namespace MDForum.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
+        public ActionResult Questions()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+        }
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Themes
@@ -91,6 +106,7 @@ namespace MDForum.Controllers
         }
 
         // GET: Themes/Delete/5
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,10 +122,19 @@ namespace MDForum.Controllers
         }
 
         // POST: Themes/Delete/5
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            Comment comm;
+            var comments = db.Comments.Where(x => x.ThemeId == id);
+            foreach (var comment in comments)
+            {
+                comm = db.Comments.Find(comment.Id);
+                db.Comments.Remove(comm);
+            }
+            
             Theme theme = db.Themes.Find(id);
             db.Themes.Remove(theme);
             db.SaveChanges();

@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MDForum.Models;
+using MDF.Domain;
+using MDF.BLogic;
 
 namespace MDForum.Controllers
 {
@@ -17,9 +19,11 @@ namespace MDForum.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext context;
 
         public AccountController()
         {
+            context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -481,5 +485,28 @@ namespace MDForum.Controllers
             }
         }
         #endregion
+        [Authorize(Roles = "admin")]
+        [HttpGet]
+        public ActionResult RegisterRole()
+        {
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            ViewBag.UserName = new SelectList(context.Users.ToList(), "UserName", "UserName");
+            return View();
+        }
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterRole(RegisterViewModel model, ApplicationUser user)
+        {
+            var userId = context.Users.Where(i => i.UserName == user.UserName).Select(s => s.Id);
+            string updateId = "";
+            foreach (var i in userId)
+            {
+                updateId = i.ToString();
+            }
+
+            await this.UserManager.AddToRolesAsync(updateId, model.Name);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

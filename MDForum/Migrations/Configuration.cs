@@ -1,6 +1,7 @@
 namespace MDForum.Migrations
 {
-    using MDForum.Models;
+    using MDF.Domain;
+    using MDF.BLogic;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
@@ -8,14 +9,14 @@ namespace MDForum.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MDForum.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MDF.BLogic.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MDForum.Models.ApplicationDbContext context)
+        protected override void Seed(MDF.BLogic.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -23,7 +24,7 @@ namespace MDForum.Migrations
             //  to avoid creating duplicate seed data.
             AddUsers(context);
         }
-        void AddUsers(MDForum.Models.ApplicationDbContext context)
+        void AddUsers(MDF.BLogic.ApplicationDbContext context)
         {
             var user = new ApplicationUser { UserName = "admin@mail.ru" };
             var um = new UserManager<ApplicationUser>(

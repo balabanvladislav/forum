@@ -1,0 +1,16 @@
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\MDF.Domain.dll.config
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\MDF.Domain.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\MDF.Domain.pdb
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\EntityFramework.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\EntityFramework.xml
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\obj\Debug\MDF.Domain.csprojAssemblyReference.cache
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\obj\Debug\MDF.Domain.csproj.CoreCompileInputs.cache
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\obj\Debug\MDF.Domain.csproj.CopyComplete
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\obj\Debug\MDF.Domain.dll
+C:\Users\37360\Desktop\Forum\MDForum\MDF.Domain\obj\Debug\MDF.Domain.pdb

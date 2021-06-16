@@ -1,4 +1,4 @@
-﻿namespace MDForum.Models
+﻿namespace MDF.Domain
 {
     public class Theme
     {

@@ -1,0 +1,77 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<MDF.Domain.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    var Model2 = Model.Where(x => x.ThemeId == ViewBag.Theme.Id);
+}
+<blockquote>
+    <dt>@ViewBag.Theme.Title</dt>
+    <dd>
+        <em>
+            @ViewBag.Theme.DepText
+        </em>
+
+    </dd>
+</blockquote>
+
+
+<h2>@Html.ActionLink("Scrie un comentariu", "Create", "Comments", new { ViewBag.Theme.Id }, new { })</h2>
+
+
+<table class="table" style=" width: 800px; margin-left: 335px; ">
+    @foreach (var item in Model2)
+    {
+        <tr>
+            <td style="color: #779955; border-top: 10px solid #151515;">
+                @if (item.Author is null)
+                {
+                    @Html.Label("Anonim")
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Author)
+                }
+
+            </td>
+            <td style="border-top:10px solid #151515; width:176px">
+                @if (item.User != null)
+                {
+                    if (User.Identity.GetUserId() == item.User.Id)
+                    {
+                        @Html.ActionLink("Editeaza ", "Edit", new { id = item.Id })
+                        @Html.Label(" | ")
+                        @Html.ActionLink(" Detalii ", "Details", new { id = item.Id })
+                        @Html.Label(" | ")
+                        @Html.ActionLink(" Sterge", "Delete", new { id = item.Id }, new { style = "color:red" })
+                    }
+                }
+                else
+                {
+                    if (User.IsInRole("admin"))
+                    {
+                        @Html.ActionLink(" Sterge", "Delete", new { id = item.Id }, new { style = "color:red" })
+                    }
+                }
+            </td>
+            <td style="width:150px; border-top: 10px solid #151515;">
+                @Html.DisplayFor(modelItem => item.DTime)
+
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="3" style="padding:0 10px; border: none;">
+                <br/>
+
+                @Html.DisplayFor(modelItem => item.CommentText)
+                <br/>
+                <br/>
+            </td>
+
+        </tr>
+    }
+</table>

@@ -8,28 +8,31 @@
         <li id="lhome">
             @Html.ActionLink("Acasa", "Index", "Home")
         </li>
-        <li id="mysterious">
-            <a href="#03">Ceva neclar</a>
-        </li>
         <li id="labout">
-            <a href="#04">Despre Noi</a>
+            @Html.ActionLink("Despre noi", "About", "Home")
         </li>
         <li id="lcontact">
-            <a href="#05">Contacteaza -ne</a>
+            @Html.ActionLink("Contacteaza -ne", "Contact", "Home")
+        </li>
+        <li id="mysterious">
+            @Html.ActionLink("Ai intrebari?", "Questions", "Home")
         </li>
         @if (!Request.IsAuthenticated)
         {
-            <li style=" position: absolute; right:10px">@Html.ActionLink("Inregistrare", "Register", "Account", routeValues: null, htmlAttributes: new {id = "registerLink"})</li>
+            <li style=" position: absolute; right:10px">@Html.ActionLink("Inregistrare", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 
-            <li style="position: absolute; right: 134px">@Html.ActionLink("Logare", "Login", "Account", routeValues: null, htmlAttributes: new {id = "loginLink"})</li>
+            <li style="position: absolute; right: 134px">@Html.ActionLink("Logare", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
         }
         else
-        {    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
         {
-            @Html.AntiForgeryToken()
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
 
-                <li style=" position: absolute; right:10px"><a href="javascript:document.getElementById('logoutForm').submit()">Iesi</a></li>
-        }
+                <li style=" position: absolute; right:10px">
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Iesi</a>
+                </li>
+            }
         }
     </ul>
 </div>

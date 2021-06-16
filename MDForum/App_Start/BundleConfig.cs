@@ -26,7 +26,6 @@ namespace MDForum
                       "~/Content/bootstrap.css",
                       "~/Content/css/screen.css"));
             
-            
         }
     }
 }
